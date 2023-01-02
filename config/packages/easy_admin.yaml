@@ -8,11 +8,11 @@ easy_admin:
           # ...
           list:
             fields:
-              - { property: 'image', type: 'image', base_path: '%app.path.parc_images%' }
+              - { property: 'image', type: 'image', base_path: '%app.path.activite_images%' }
           # ...
           show:
             fields:
-              - { property: 'image', type: 'image', base_path: '%app.path.parc_images%' }
+              - { property: 'image', type: 'image', base_path: '%app.path.activite_images%' }
           # ...
           form:
             fields:
@@ -21,11 +21,11 @@ easy_admin:
         # ...
         list:
           fields:
-            - { property: 'image', type: 'image', base_path: '%app.path.point_images%' }
+            - { property: 'image', type: 'image', base_path: '%app.path.activite_photo_images%' }
         # ...
         show:
           fields:
-            - { property: 'image', type: 'image', base_path: '%app.path.point_images%' }
+            - { property: 'image', type: 'image', base_path: '%app.path.activite_photo_images%' }
         # ...
         form:
           fields:

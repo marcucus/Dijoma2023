@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController!{% endblock %}
+
+{% block body %}
+    <header class="bg-white shadow-sm">
+        <div class="mx-auto max-w-7xl py-4 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-lg font-semibold leading-6 text-gray-900">Inscription</h1>
+        </div>
+    </header>
+    <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email,{'attr': {'class': 'form-control'}}) }}
+            {{ form_row(registrationForm.plainPassword,{'attr': {'class': 'form-control'}}, {
+                label: 'Password',
+            }) }}
+            <br>
+            <button type="submit" class="btn btn-lg btn-primary">Créer un compte</button>
+            {{ form_end(registrationForm) }}
+
+        </div>
+    </main>
+    </div>
+{% endblock %}

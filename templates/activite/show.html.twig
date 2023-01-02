@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Photos{% endblock %}
+{% block body %}
+
+{% for activite in activites %}
+    <h1>{{ activite.title }}</h1>
+{% endfor %}
+{% for photo in photos %}
+    {% if photo.imageName is not null %}
+        <img src="{{asset('images/upload/activite/images/'~photo.imageName)}}" alt="image du point">
+    {% else %}
+        <div>Pas de photos</div>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
