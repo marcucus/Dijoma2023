@@ -4,6 +4,8 @@ vich_uploader:
     activite_images:
       uri_prefix: /images/upload/activite
       upload_destination: '%kernel.project_dir%/public/images/upload/activite'
+      namer: vich_uploader.namer_origname
     activite_photo_images:
       uri_prefix: /images/upload/activite/images
       upload_destination: '%kernel.project_dir%/public/images/upload/activite/images'
+      namer: vich_uploader.namer_origname

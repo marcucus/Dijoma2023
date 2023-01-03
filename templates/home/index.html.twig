@@ -3,22 +3,83 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    <div class="site-responsive">
-        <header class="bg-white shadow-sm">
-            <div class="mx-auto max-w-7xl py-4 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-lg font-semibold leading-6 text-gray-900">Home</h1>
+            <div class="relative bg-white">
+                <main class="lg:relative">
+                    <div class="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
+                        <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
+                            <h1 class="text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                                <span class="block xl:inline">Bienvenue chez</span>
+                                <span class="block text-red-700 xl:inline">DIJOMA</span>
+                            </h1>
+                            <p class="mx-auto mt-3 max-w-md text-lg text-stone-500 sm:text-xl md:mt-5 md:max-w-3xl">Société familiale de publicité et de menuiserie créée en 1996.
+                                Agréée Région Wallonne et affiliée CSTC.</p>
+                            <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+                                <div class="rounded-md shadow">
+                                    <a href="#pres" class="flex w-full items-center justify-center rounded-md border border-transparent bg-red-700 px-8 py-3 text-base font-medium text-white hover:bg-red-800 md:py-4 md:px-10 md:text-lg">En savoir plus</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
+                        <div class="site-responsive">
+                            <img class="absolute inset-0 h-auto w-auto object-cover" src="{{ asset('images/image1.jpeg') }}" alt="">
+                        </div>
+                    </div>
+                </main>
             </div>
-        </header>
-        <main>
-            <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                <!-- Replace with your content -->
-                <div class="px-4 py-4 sm:px-0">
-                    <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div>
-                </div>
-                <!-- /End replace -->
-            </div>
-        </main>
+    <div class="bg-gray-50"></div>
+<div class="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+    <div class="absolute inset-0">
+        <div class="h-1/3 bg-gray-50 sm:h-2/3"></div>
     </div>
+    <div class="relative mx-auto max-w-7xl">
+        <div class="relative">
+            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center">
+                <span class="bg-gray-50 px-3 text-lg font-medium text-stone-900">Plus d'informations</span>
+            </div>
+        </div>
+        <div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-red-700">
+                            Information
+                        </p>
+                            <p class="text-xl font-semibold text-stone-900">
+                            Notre société réalise la création, la confection et la pose de lettrages, enseignes et slogans publicitaires.
+                            Nous nous occupons de votre visibilité.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-red-700">
+                            Information
+                        </p>
+                            <p class="text-xl font-semibold text-stone-900">
+                            Spécialisée dans le grand format et le placement à plusieurs mètres de hauteur, notre personnel dévoué et qualifié réalisé avec le patron les poses les plus délicates, ou difficiles d'accès.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                <div class="flex flex-1 flex-col justify-between bg-white p-6">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-red-700">
+                           Information
+                        </p>
+                            <p class="text-xl font-semibold text-stone-900">
+                            Pour vos cadeaux d'entreprise ou vos "coups de pub", une gamme d'objet divers avec votre logo ou slogan vous est proposée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     {#  <div class="site-responsive">
     <header class="bg-white shadow-sm">
         <div class="mx-auto max-w-7xl py-4 px-4 sm:px-6 lg:px-8">
@@ -48,4 +109,7 @@
     </main>
     </div>#}
 </div>
+
+
+
 {% endblock %}
