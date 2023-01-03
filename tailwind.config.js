@@ -1,13 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
-
+const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
     "./assets/**/*.js",
     "./templates/**/*.html.twig",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        sky: colors.sky,
+        teal: colors.teal,
+        rose: colors.rose,
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio'),],
 }

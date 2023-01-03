@@ -1,4 +1,66 @@
 {% block body %}
+{#
+    <div class="min-h-full">
+        <div class="bg-stone-900 pb-32">
+            <header class="fixed sticky top-0 z-30">
+            <nav class="bg-stone-900">
+                <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    <div class="border-b border-gray-700">
+                        <div class="flex h-16 items-center justify-between px-4 sm:px-0">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="text-zinc-300 text-base font-bold" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; ">DIJOMA</div>
+                                </div>
+                                <div class="hidden md:block">
+                                    <div class="ml-10 flex items-baseline space-x-4">
+                                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                        <a href="{{ path('app_front') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+
+                                        <a href="{{ path('app_activite') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Activités</a>
+
+                                        <a href="{{ path('app_contact') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+
+                                        <a href="{{ path('app_localisation') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Localisation</a>
+
+                                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                                        <a  href="{{ path('admin') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Administration</a>
+                                    {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu, show/hide based on menu state. -->
+                <div class="border-b border-gray-700 md:hidden" id="mobile-menu">
+                    <div class="space-y-1 px-2 py-3 sm:px-3">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        <a href="{{ path('app_front') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+
+                        <a href="{{ path('app_activite') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Activités</a>
+
+                        <a href="{{ path('app_contact') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+
+                        <a href="{{ path('app_localisation') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Localisation</a>
+
+                        {% if app.user and is_granted('ROLE_ADMIN') %}
+                            <a  href="{{ path('admin') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Administration</a>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </nav></header>
+            <header class="py-10">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
+                </div>
+            </header>
+        </div>
+
+
+    </div>#}
 <div class="min-h-full">
     <nav class="bg-stone-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -15,17 +77,15 @@
 
                             <a href="{{ path('app_activite') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Activités</a>
 
-                            <a href="{{ path('app_contact') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-
                             <a href="{{ path('app_localisation') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Localisation</a>
-
-                            {% if app.user and is_granted('ROLE_ADMIN') %}
-                                <a  href="{{ path('admin') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Administration</a>
-                            {% endif %}
 
                         </div>
                     </div>
-                </div>{#
+                </div>{% if app.user and is_granted('ROLE_ADMIN') %}
+                <div class="hidden md:flex md:items-center md:space-x-6">
+                    <a href="{{ path('app_logout') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Se deconnecter</a>
+                    <a href="{{ path('admin') }}" class="inline-flex items-center rounded-md border border-transparent bg-red-800 px-4 py-2 text-base font-medium text-zinc-300 hover:bg-red-900">Administration</a>
+                </div>{% endif %}{#
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -98,8 +158,6 @@
                 <a href="{{ path('app_front') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Accueil</a>
 
                 <a href="{{ path('app_activite') }}"  class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Activités</a>
-
-                <a href="{{ path('app_contact') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
 
                 <a href="{{ path('app_localisation') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Localisation</a>
 
