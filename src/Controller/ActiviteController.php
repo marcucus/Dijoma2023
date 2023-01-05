@@ -22,4 +22,25 @@ class ActiviteController extends AbstractController
         ]);
     }
 
+    #[Route('/activite/{id}', name: 'ActPhoto', methods: ['GET'])]
+    public function show(Activite $activite, ActPhotosRepository $actPhotosRepository, ActiviteRepository $activiteRepository): Response
+    {
+        $id = $activite->getId();
+        $actQuery = $activiteRepository->findAll();
+        $PhotoQuery = $actPhotosRepository->findPhotosByIdAct($id);
+        return $this->render('activite/index.html.twig', [
+            'activites' => $actQuery,
+            'photos'=>$PhotoQuery,
+        ]);
+    }
+
+    #[Route('/activiteInfo/{id}', name: 'moreInfo', methods: ['GET'])]
+    public function showInfo(Activite $activite, ActPhotosRepository $actPhotosRepository, ActiviteRepository $activiteRepository): Response
+    {
+        $id = $activite->getId();
+        $actQuery = $activiteRepository->find($id);
+        return $this->render('activite/show.html.twig', [
+            'activites' => $actQuery,
+        ]);
+    }
 }

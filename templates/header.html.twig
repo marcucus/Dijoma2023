@@ -62,9 +62,9 @@
 
     </div>#}
 <div class="min-h-full">
-    <nav class="bg-stone-900">
+    <nav class="bg-apple">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
+            <div class="flex h-12 items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <div class="text-zinc-300 text-base font-bold" style="font-family: Futura,Trebuchet MS,Arial,sans-serif; ">DIJOMA</div>
@@ -77,7 +77,11 @@
 
                             <a href="{{ path('app_activite') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Activités</a>
 
-                            <a href="{{ path('app_localisation') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Localisation</a>
+                            <a href="{{ path('app_front') }}../#pres" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Informations</a>
+
+                            <a href="{{ path('app_front') }}../#localisation" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Localisation</a>
+
+                            <a href="{{ path('app_front') }}../#avis" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Avis</a>
 
                         </div>
                     </div>
@@ -159,7 +163,11 @@
 
                 <a href="{{ path('app_activite') }}"  class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Activités</a>
 
-                <a href="{{ path('app_localisation') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Localisation</a>
+                <a href="{{ path('app_front') }}../#pres" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Informations</a>
+
+                <a href="{{ path('app_front') }}../#localisation" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Localisation</a>
+
+                <a href="{{ path('app_front') }}../#avis" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Avis</a>
 
                 {% if app.user and is_granted('ROLE_ADMIN') %}
                     <a  href="{{ path('admin') }}" class="text-zinc-300 hover:bg-zinc-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Administration</a>

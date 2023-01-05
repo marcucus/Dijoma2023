@@ -12,6 +12,7 @@ module.exports = {
         sky: colors.sky,
         teal: colors.teal,
         rose: colors.rose,
+        'apple':'#000000cc',
       },
     },
   },

@@ -42,6 +42,9 @@ class Activite
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $description;
+
     #[ORM\OneToMany(mappedBy: 'activite', targetEntity: ActPhotos::class, cascade: ['remove'], orphanRemoval: true)]
     private $actPhotos;
 
@@ -71,6 +74,16 @@ class Activite
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
     }
 
     /**

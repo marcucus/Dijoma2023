@@ -21,6 +21,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@tailwindcss/aspect-ratio": "^0.4.2"
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "firebase": "^9.15.0"
     }
 }
