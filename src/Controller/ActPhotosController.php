@@ -24,9 +24,11 @@ class ActPhotosController extends AbstractController
     {
         $id = $activite->getId();
         $ActQuery = $activiteRepository->findBy(array('id'=>$id));
+        $ActsQuery = $activiteRepository->findAll();
         $PhotoQuery = $actPhotosRepository->findPhotosByIdAct($id);
         return $this->render('activite/show.html.twig', [
-            'activites' => $ActQuery,
+            'activite' => $ActQuery,
+            'activites' => $ActsQuery,
             'photos' => $PhotoQuery,
         ]);
     }

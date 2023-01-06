@@ -13,6 +13,7 @@ module.exports = {
         teal: colors.teal,
         rose: colors.rose,
         'apple':'#000000cc',
+        'appleground':'#fff',
       },
     },
   },
